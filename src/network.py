@@ -9,12 +9,12 @@ simple, easily readable, and easily modifiable.  It is not optimized,
 and omits many desirable features.
 """
 
-#### Libraries
 # Standard library
 import random
 
 # Third-party libraries
 import numpy as np
+
 
 class Network(object):
 
@@ -128,10 +128,11 @@ class Network(object):
     def cost_derivative(self, output_activations, y):
         """Return the vector of partial derivatives \partial C_x /
         \partial a for the output activations."""
-        return (output_activations-y)
+        return output_activations - y
 
 
-#### Miscellaneous functions
+# Miscellaneous functions
+
 def sigmoid(z):
     """The sigmoid function."""
     return 1.0/(1.0+np.exp(-z))
@@ -139,4 +140,4 @@ def sigmoid(z):
 
 def sigmoid_prime(z):
     """Derivative of the sigmoid function."""
-    return sigmoid(z)*(1-sigmoid(z))
+    return sigmoid(z) * (1 - sigmoid(z))
